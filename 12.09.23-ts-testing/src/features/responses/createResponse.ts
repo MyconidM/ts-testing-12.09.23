@@ -1,4 +1,4 @@
-import { CreateResponses, Faker } from "./types"
+import { CreateResponses, Faker, Response } from "./types"
 
 const fakeAnswers: string[] = [
   "GlitterGlo Lipstick",
@@ -11,20 +11,20 @@ const fakeScores: number[] = [3, 2, 1]
 
 const fakeCategories: string[] = ["Math", "Code", "Science"]
 
-const getRandomItem = <T>(items: T[]) => {
+const getRandomItem = <T>(items: T[]) => { //<T> for å definere en generic
   return items[Math.floor(Math.random() * items.length)]
 }
 
-const getRandomId = () => {
+export const getRandomId = () => {
   return Math.random().toString(36).slice(2)
 }
 
-// TODO: Oppgave 1 - Not implemented
+// TODO: Oppgave 1 - løst
 const faker: Faker = {
-  id,
-  answer,
-  score,
-  category,
+  id: () => getRandomId(),
+  answer: () => getRandomItem<string>(fakeAnswers), //<string> det som er <T> over
+  score: () => getRandomItem<number>(fakeScores),
+  category: () => getRandomItem<string>(fakeCategories),
 }
 
 // TODO: Oppgave 1 - Not implemented
@@ -33,6 +33,17 @@ const createResponses: CreateResponses = ({
   count,
   faker,
 }) => {
+  const responses = new Map(existingResponses);
+  if ()
+  for (let i = 0; i < count; i++) {
+    const response = {
+      id: faker.id(),
+      answer: faker.,
+      score: number,
+      category: string,
+      questionId: string
+    }
+  }
   return responses
 }
 
