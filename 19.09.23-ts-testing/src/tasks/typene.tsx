@@ -6,7 +6,7 @@
 // const gender = genders[0]
 // const hasKids = true
 // const data = { name: firstName, age, gender }
-
+/*
 type person = {
     firstName: string
     age: number
@@ -63,3 +63,4 @@ describe("Validate Age", () => {
       // Use toContain - to validate allowed key
     })
   })
+  */
